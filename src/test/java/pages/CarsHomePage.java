@@ -10,6 +10,6 @@ public class CarsHomePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id ='mobile-menu-section']/div[2]/a[1]")
-    public WebElement signInButton;
+    @FindBy(css = ".header-signin")
+    public WebElement signInLink;
 }

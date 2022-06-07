@@ -9,14 +9,14 @@ public class _01_Cars_Test extends Base {
     @Test(priority = 1, description = "TC:001 Validate Cars.com Sign In Page Form")
     public void validateSignInForm(){
         driver.get("https://www.cars.com/");
-        carsHomePage.signInButton.click();
+        carsHomePage.signInLink.click();
         Waiters.pause(3);
 
         //heading1
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.cars.com/signin/?redirect_path=%2F");
-        Assert.assertEquals(carsSignInPage.signInPageHeader1.getText(), "Sign in");
+        Assert.assertEquals(carsSignInPage.signInPageHeading1.getText(), "Sign in");
         //heading2
-        Assert.assertEquals(carsSignInPage.signInPageHeader2.getText(), "New to Cars.com? Sign up. Are you a dealer?");
+        Assert.assertEquals(carsSignInPage.signInPageHeading2.getText(), "New to Cars.com? Sign up. Are you a dealer?");
         //email validation
         Assert.assertEquals(carsSignInPage.emailLabel.getText(), "Email");
         Assert.assertTrue(carsSignInPage.emailInputBox.isEnabled());
@@ -24,7 +24,7 @@ public class _01_Cars_Test extends Base {
         Assert.assertEquals(carsSignInPage.passwordLabel.getText(),"Password");
         Assert.assertTrue(carsSignInPage.passwordInputBox.isEnabled());
         //password characters validation
-        Assert.assertEquals(carsSignInPage.passwordWarning.getText(), "Minimum of eight characters");
+        Assert.assertEquals(carsSignInPage.passwordWarningMinCharacters.getText(), "Minimum of eight characters");
         //forgot password
         Assert.assertTrue(carsSignInPage.forgotPassword.isDisplayed());
         //privacy
@@ -37,7 +37,7 @@ public class _01_Cars_Test extends Base {
     @Test(priority = 2, description = "TC:002 Validate Cars.com Sign In Page Social Media Section")
     public void validateSocialMediaSection(){
         driver.get("https://www.cars.com/");
-        carsHomePage.signInButton.click();
+        carsHomePage.signInLink.click();
         //Social header
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.cars.com/signin/?redirect_path=%2F");
         Assert.assertEquals(carsSignInPage.connectSocial.getText(), "Connect with social");
@@ -56,7 +56,7 @@ public class _01_Cars_Test extends Base {
     public void validateInvalidCredentials(){
         driver.get("https://www.cars.com/");
         //sign in
-        carsHomePage.signInButton.click();
+        carsHomePage.signInLink.click();
         //email input
         carsSignInPage.emailInputBox.sendKeys("johndoe@gmail.com");
         //password input
@@ -64,9 +64,9 @@ public class _01_Cars_Test extends Base {
         //sign in
         carsSignInPage.signInButton.click();
         //validate unable to sign in
-        Assert.assertEquals(carsSignInPage.unrecognizedEmailTitle.getText(), "We were unable to sign you in.");
+        Assert.assertEquals(carsSignInPage.wrongEmailMessageHeader.getText(), "We were unable to sign you in.");
         //validate wrong email and password
-        Assert.assertEquals(carsSignInPage.unrecognizedEmailDescription.getText(), "Your email or password was not recognized. Try again soon.");
+        Assert.assertEquals(carsSignInPage.wrongEmailMessageBody.getText(), "Your email or password was not recognized. Try again soon.");
 
     }
 }

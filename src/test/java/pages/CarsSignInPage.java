@@ -10,10 +10,10 @@ public class CarsSignInPage {
     }
 
     @FindBy(xpath = "//*[@id ='ae-main-content']/section/header/h1")
-    public WebElement signInPageHeader1;
+    public WebElement signInPageHeading1;
 
     @FindBy(xpath = "//*[@id ='ae-main-content']/section/div/div/div/p")
-    public WebElement signInPageHeader2;
+    public WebElement signInPageHeading2;
 
     @FindBy(className = "sds-label")
     public WebElement emailLabel;
@@ -28,7 +28,7 @@ public class CarsSignInPage {
     public WebElement passwordInputBox;
 
     @FindBy(xpath = "//*[@class ='sds-helper-text']")
-    public WebElement passwordWarning;
+    public WebElement passwordWarningMinCharacters;
 
     @FindBy(xpath = "//*[@class ='password-help']/p[2]")
     public WebElement forgotPassword;
@@ -52,9 +52,9 @@ public class CarsSignInPage {
     public WebElement signInApple;
 
     @FindBy(xpath = "//*[@class = 'sds-notification__content']/div")
-    public WebElement unrecognizedEmailTitle;
+    public WebElement wrongEmailMessageHeader;
 
     @FindBy(xpath = "//*[@class = 'sds-notification__content']/p")
-    public WebElement unrecognizedEmailDescription;
+    public WebElement wrongEmailMessageBody;
 
 }
