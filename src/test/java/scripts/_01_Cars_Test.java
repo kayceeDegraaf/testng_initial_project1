@@ -8,7 +8,7 @@ public class _01_Cars_Test extends Base {
 
     @Test(priority = 1, description = "TC:001 Validate Cars.com Sign In Page Form")
     public void validateSignInForm(){
-        driver.get("“https://www.cars.com/” ");
+        driver.get("https://www.cars.com/");
         carsHomePage.signInButton.click();
         Waiters.pause(3);
 
@@ -36,7 +36,7 @@ public class _01_Cars_Test extends Base {
 
     @Test(priority = 2, description = "TC:002 Validate Cars.com Sign In Page Social Media Section")
     public void validateSocialMediaSection(){
-        driver.get("“https://www.cars.com/” ");
+        driver.get("https://www.cars.com/");
         carsHomePage.signInButton.click();
         //Social header
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.cars.com/signin/?redirect_path=%2F");
@@ -54,7 +54,7 @@ public class _01_Cars_Test extends Base {
 
     @Test(priority = 3, description = "TC:003 Validate User Cannot Sign In to Cars.com With Invalid Credentials")
     public void validateInvalidCredentials(){
-        driver.get("“https://www.cars.com/” ");
+        driver.get("https://www.cars.com/");
         carsHomePage.signInButton.click();
         carsSignInPage.emailInputBox.sendKeys("johndoe@gmail.com");
         carsSignInPage.passwordInputBox.sendKeys("abcd1234");
