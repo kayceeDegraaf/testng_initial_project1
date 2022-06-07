@@ -55,11 +55,17 @@ public class _01_Cars_Test extends Base {
     @Test(priority = 3, description = "TC:003 Validate User Cannot Sign In to Cars.com With Invalid Credentials")
     public void validateInvalidCredentials(){
         driver.get("https://www.cars.com/");
+        //sign in
         carsHomePage.signInButton.click();
+        //email input
         carsSignInPage.emailInputBox.sendKeys("johndoe@gmail.com");
+        //password input
         carsSignInPage.passwordInputBox.sendKeys("abcd1234");
+        //sign in
         carsSignInPage.signInButton.click();
+        //validate unable to sign in
         Assert.assertEquals(carsSignInPage.unrecognizedEmailTitle.getText(), "We were unable to sign you in.");
+        //validate wrong email and password
         Assert.assertEquals(carsSignInPage.unrecognizedEmailDescription.getText(), "Your email or password was not recognized. Try again soon.");
 
     }
